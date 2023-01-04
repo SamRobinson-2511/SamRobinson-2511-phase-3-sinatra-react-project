@@ -13,15 +13,6 @@
 ActiveRecord::Schema.define(version: 2023_01_04_152632) do
 
   create_table "collections", force: :cascade do |t|
-    t.string "artist_name"
-    t.string "artist_first_name"
-    t.string "artist_last_name"
-    t.string "album_name"
-    t.string "label"
-    t.string "release_date"
-    t.string "cat_num"
-    t.string "date_purchased"
-    t.float "purchase_price"
     t.integer "collector_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

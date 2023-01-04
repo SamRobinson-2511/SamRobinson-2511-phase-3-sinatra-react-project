@@ -16,3 +16,6 @@
 
 # Canvas-specific .results.json
 .results.json
+
+#should not have lock file
+.Gemfile.lock
