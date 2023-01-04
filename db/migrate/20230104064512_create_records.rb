@@ -10,6 +10,7 @@ class CreateRecords < ActiveRecord::Migration[6.1]
       t.string :cat_num
       t.belongs_to :collector
       t.belongs_to :store
+      t.belongs_to :collection
       t.timestamps 
     end
   end

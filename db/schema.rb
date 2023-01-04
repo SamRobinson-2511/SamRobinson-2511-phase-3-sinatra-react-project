@@ -49,8 +49,10 @@ ActiveRecord::Schema.define(version: 2023_01_04_152632) do
     t.string "cat_num"
     t.integer "collector_id"
     t.integer "store_id"
+    t.integer "collection_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["collection_id"], name: "index_records_on_collection_id"
     t.index ["collector_id"], name: "index_records_on_collector_id"
     t.index ["store_id"], name: "index_records_on_store_id"
   end
