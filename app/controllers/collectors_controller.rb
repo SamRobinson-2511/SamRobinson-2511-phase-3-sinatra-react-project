@@ -45,6 +45,7 @@ class CollectorsController < ApplicationController
             collector_id: params[:collector_id], 
             store_id: params[:store_id]
         )
+        record.to_json 
     end
        
 
