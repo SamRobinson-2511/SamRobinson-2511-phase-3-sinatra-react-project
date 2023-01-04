@@ -24,7 +24,8 @@ puts "collectors seeded"
 
 puts "seed records"
 
-record1 = Record.create(artist_name: "FourTet", 
+record1 = Record.create(
+    artist_name: "FourTet", 
     artist_first_name: "Kieren",
     artist_last_name: "Hebden", 
     album_name: "A Joy" , 

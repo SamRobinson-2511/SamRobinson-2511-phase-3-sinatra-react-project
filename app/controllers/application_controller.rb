@@ -11,9 +11,4 @@ class ApplicationController < Sinatra::Base
     collector = Collector.all
     collector.to_json 
   end
-
-  get "/records" do
-    records = Record.all
-    records.to_json
-  end
 end
