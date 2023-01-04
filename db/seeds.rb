@@ -59,6 +59,10 @@ store_id: store3.id
 
 puts "records seeded"
 
+puts "seed collection"
+
+Collection.create()
+
 
 
     
