@@ -59,11 +59,13 @@ store_id: store3.id
 
 puts "records seeded"
 
-puts "seed collection"
+puts "seed collections"
 
-Collection.create()
+collection1 = Collection.create(collector_id: collector1.id)
+collection2 = Collection.create(collector_id: collector2.id)
+collection3 = Collection.create(collector_id: collector3.id)
 
-
+puts "collections seeded"
 
     
 puts "✅ Done seeding!"
