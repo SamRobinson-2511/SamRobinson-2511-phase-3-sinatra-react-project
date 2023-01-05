@@ -12,4 +12,10 @@ end
 use Rack::JSONBodyParser
 
 # Our application
+
+
+use CollectorsController
+use ReviewsController
+use RecordsController 
+
 run ApplicationController

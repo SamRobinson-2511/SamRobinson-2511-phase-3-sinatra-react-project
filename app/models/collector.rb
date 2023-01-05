@@ -1,5 +1,5 @@
 class Collector < ActiveRecord::Base
-    has_many :records
-    has_many :stores, through: :records
+    has_many :reviews
+    has_many :records, through: :reviews
 
 end
