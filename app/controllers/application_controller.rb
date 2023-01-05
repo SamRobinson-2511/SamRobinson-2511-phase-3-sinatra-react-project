@@ -12,8 +12,5 @@ class ApplicationController < Sinatra::Base
     collector.to_json 
   end
   
-  private
-  def current_user
-    Collector.first
-  end
+
 end

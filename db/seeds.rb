@@ -2,16 +2,11 @@ puts "clearing database"
 
 Collector.destroy_all
 Record.destroy_all
-Store.destroy_all
+Collection.destroy_all
+Review.destroy_all
 
 puts "🌱 Seeding spices..."
-puts "seeding stores"
 
-store1 = Store.create(name: "Ameoba Music", address: "123 Main Street", city: "San Francisco", state: "CA")
-store2 = Store.create(name: "Dusty Groove", address: "123 Main Street", city: "Chicago", state: "IL")
-store3 = Store.create(name: "Luna Music", address: "123 Main Street", city: "Indianapolis", state: "IN")
-
-puts "stores seeded"
 
 puts "seed collectors"
 
@@ -32,30 +27,30 @@ record1 = Record.create(
     label: "Domino", 
     release_date: "2005", 
     cat_num: "dno 074", 
-    collector_id: collector1.id , 
-    store_id: store1.id
+    collector_id: collector1.id
+    
 )
 
-record2 = Record.create(artist_name: "Lefty Frizell", 
+record2 = Record.create(
+    artist_name: "Lefty Frizell", 
     artist_first_name: "Lefty",
     artist_last_name: "Frizzell", 
     album_name: "The Legend Lives On" , 
     label: "Columbia", 
     release_date: "1983", 
     cat_num: "FC 38938", 
-    collector_id: collector2.id , 
-    store_id: store2.id
+    collector_id: collector2.id 
 )
 
-record3 = Record.create(artist_name: "Lego Feet", 
-artist_first_name: "",
-artist_last_name: "", 
-album_name: "S/T" , 
-label: "SKA", 
-release_date: "1995", 
-cat_num: "SKA001LP", 
-collector_id: collector3.id , 
-store_id: store3.id
+record3 = Record.create(
+    artist_name: "Lego Feet", 
+    artist_first_name: "",
+    artist_last_name: "", 
+    album_name: "S/T" , 
+    label: "SKA", 
+    release_date: "1995", 
+    cat_num: "SKA001LP", 
+    collector_id: collector3.id  
 )
 
 puts "records seeded"
@@ -68,5 +63,12 @@ collection3 = Collection.create(collector_id: collector3.id)
 
 puts "collections seeded"
 
+puts "reviews seeding"
+
+review1 = Review.create(rating: 4, comment: "lame", record_id: record1.id, collector_id: collector1.id)
+review2 = Review.create(rating: 5, comment: "at it", record_id: record2.id, collector_id: collector2.id)
+review3 = Review.create(rating: 3, comment: "sounds good to me!", record_id: record2.id, collector_id: collector3.id)
+
+puts "reviews seeded"
     
 puts "✅ Done seeding!"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_04_152632) do
+ActiveRecord::Schema.define(version: 2023_01_05_023436) do
 
   create_table "collections", force: :cascade do |t|
     t.integer "collector_id"
@@ -38,26 +38,24 @@ ActiveRecord::Schema.define(version: 2023_01_04_152632) do
     t.string "label"
     t.string "release_date"
     t.string "cat_num"
+    t.string "genre"
     t.integer "collector_id"
-    t.integer "store_id"
     t.integer "collection_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["collection_id"], name: "index_records_on_collection_id"
     t.index ["collector_id"], name: "index_records_on_collector_id"
-    t.index ["store_id"], name: "index_records_on_store_id"
   end
 
-  create_table "stores", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "city"
-    t.string "state"
-    t.integer "zip"
-    t.string "country"
-    t.string "phone"
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "comment"
+    t.integer "record_id"
+    t.integer "collector_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["collector_id"], name: "index_reviews_on_collector_id"
+    t.index ["record_id"], name: "index_reviews_on_record_id"
   end
 
 end
