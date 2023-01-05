@@ -1,5 +1,5 @@
 class Record < ActiveRecord::Base
-    belongs_to :collector
-    belongs_to :collection
+    has_many :reviews
+    has_many :collectors, through: :reviews
 
 end
