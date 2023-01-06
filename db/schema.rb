@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2023_01_05_023436) do
 
-  create_table "collections", force: :cascade do |t|
-    t.integer "collector_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["collector_id"], name: "index_collections_on_collector_id"
-  end
-
   create_table "collectors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"

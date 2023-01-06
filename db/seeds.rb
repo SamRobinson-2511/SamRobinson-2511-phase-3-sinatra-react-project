@@ -2,7 +2,6 @@ puts "clearing database"
 
 Collector.destroy_all
 Record.destroy_all
-Collection.destroy_all
 Review.destroy_all
 
 puts "🌱 Seeding spices..."
@@ -54,14 +53,6 @@ record3 = Record.create(
 )
 
 puts "records seeded"
-
-puts "seed collections"
-
-collection1 = Collection.create(collector_id: collector1.id)
-collection2 = Collection.create(collector_id: collector2.id)
-collection3 = Collection.create(collector_id: collector3.id)
-
-puts "collections seeded"
 
 puts "reviews seeding"
 

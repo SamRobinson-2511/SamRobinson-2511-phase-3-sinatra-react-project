@@ -1,14 +1,13 @@
-import Header from "./Header"; 
-import RecordPage from "./RecordPage";
-import './App.css'; 
+import React from "react";
+import AppRouter from "./AppRouter";
 
 function App() {
-
-return (
-  <div className="app">
-    <Header />
-    <RecordPage />
-  </div>
-);
+  
+  return (
+    <div>
+      <AppRouter />
+    </div>
+  );
 }
+
 export default App;
