@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_05_023436) do
-
-  create_table "collections", force: :cascade do |t|
-    t.integer "collector_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["collector_id"], name: "index_collections_on_collector_id"
-  end
+ActiveRecord::Schema.define(version: 2023_01_05_231930) do
 
   create_table "collectors", force: :cascade do |t|
     t.string "first_name"
@@ -43,6 +36,7 @@ ActiveRecord::Schema.define(version: 2023_01_05_023436) do
     t.integer "collection_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
     t.index ["collection_id"], name: "index_records_on_collection_id"
     t.index ["collector_id"], name: "index_records_on_collector_id"
   end
