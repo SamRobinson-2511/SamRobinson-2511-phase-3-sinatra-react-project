@@ -1,23 +1,36 @@
 import React from "react";
 
-function GuitarCard({record, handleAddToCollectionClick, isInCollection, handleDeleteFromCartClick}) {
+function RecordCard({record, handleAddToCollectionClick, isInCollection, handleDeleteFromCollectionClick, handleAddReview, handleDeleteCard}) {
 
+
+    function deleteCard (){
+        fetch(`http://localhost:9292/records/${record.id}`, {
+        method: "DELETE"
+    }
+        )
+
+        handleDeleteCard(record.id)
+    }
     return (
-        <div className={isInCollection ? "cart-card" : "card"}>
-            <img id="record-img" src={record.image_url} alt={record.name} />
+        <div className={isInCollection ? "collection-card" : "card"}>
+            <img id="record-img" src={record.image_url} alt={record.album_name} />
             <div className="details-container">
-                <div id="guitar-details">{guitar.description}</div>
+                <div id="record-label">{record.label}</div>
+                <div id="record-release-date"> {record.release_date} </div>
+                <div id="record-genre"> {record.genre} </div>
+                <div id="cat-num"> {record.cat_nam} </div>
             </div>
-            <p id="name-container">{guitar.name}</p>
-            <p>${guitar.price}</p>
-            { !isInCart  &&
-                ( <button id="add-to-cart-btn" onClick={ () => handleAddToCartClick(guitar) }>Add To Cart</button> )
+            <p id="name-container">{record.album_name}</p>
+            { !isInCollection  &&
+                ( <button id="add-to-collection-btn" onClick={ () => handleAddToCollectionClick(record) }>Add My Collection</button> )
             }
-            { isInCart && 
-                ( <button id="delete-btn" onClick={ () => handleDeleteFromCartClick(guitar) }>Remove From Cart</button> )
+            { isInCollection && 
+                ( <button id="delete-btn" onClick={ () => handleDeleteFromCollectionClick(record) }>Remove From My Collection</button> )
             }
+            <button onClick={deleteCard}>delete</button>
+            
         </div>
     )
 }
 
-export default GuitarCard;
+export default RecordCard;

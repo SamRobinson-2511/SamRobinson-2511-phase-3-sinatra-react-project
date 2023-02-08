@@ -1,0 +1,403 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.links {
+  background-color: black;
+  font-size: 18px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  font-weight: bold;
+}
+
+.links > li {
+  padding: .5rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5em;
+  justify-content: center;
+}
+
+.search-and-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-container {
+  width: auto;
+}
+
+.card {
+  text-align: center;
+  padding: 10px;
+  margin: 30px;
+  margin-bottom: auto;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.507);
+  font-weight: bold;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 20px;
+  position: relative;
+  width: 380px;
+  height: 560px;
+}
+
+.card > img {
+  border-radius: 10px;
+  opacity: 1;
+  display: flex;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.card:hover img {
+  opacity: 0.3;
+}
+
+.card:hover .details-container {
+  opacity: 1;
+}
+
+.card > #name-container {
+  min-height: 70px;
+}
+
+#record-details {
+  background-color: rgba(255, 255, 255, 0.507);
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  min-width: 400px;
+}
+
+.details-container {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.card > p {
+  background-color: rgba(0, 0, 0, 0.63);
+  border-radius: 12px;
+}
+
+#add-to-collection-btn, #delete-btn {
+  background-color: rgba(185, 54, 54, 0.726);
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 4px;
+  width: fit-content;
+  cursor: pointer;
+  margin: 0;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+}
+
+.form-container > form {
+  display: flex;
+  flex-direction: column;
+  min-width: 30%;
+  align-self: center;
+  border-style: solid;
+  padding: 16px;
+}
+
+.form-container > form > input {
+  text-align: center;
+  margin: 6px;
+  padding: 6px;
+}
+
+.form-container > form > button {
+  margin-top: 4px;
+  background-color: rgba(185, 54, 54, 0.726);
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 4px;
+  width: fit-content;
+  cursor: pointer;
+  align-self: center;
+}
+
+.collection-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* #order-btn {
+  cursor: pointer;
+  border-style: solid;
+  font-size: 14px;
+  border-color: rgba(0, 0, 0, 0.726);
+  opacity: 60%;
+}
+
+#order-btn:hover {
+  opacity: 100%;
+} */
+
+.record-collection-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+}
+
+.search-container input {
+  text-align: center;
+  width: 360px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 4px;
+}
+
+.signup-container, .login-container-inner {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.719);
+  padding-bottom: 10px;
+}
+
+.signup-container > form, .login-container-inner > form {
+  display: flex;
+  flex-direction: column;
+  min-width: 30%;
+  align-self: center;
+  border-style: solid;
+  padding: 16px;
+}
+
+.signup-container > form > input, .login-container-inner > form > input {
+  text-align: center;
+  margin: 6px;
+  padding: 6px;
+}
+
+.signup-container > form > button, .login-container-inner > form > button {
+  margin-top: 4px;
+  background-color: rgba(185, 54, 54, 0.726);
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 4px;
+  width: fit-content;
+  cursor: pointer;
+  align-self: center;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.719);
+  padding-bottom: 10px;
+  justify-content: center;
+  min-height: 260px;
+}
+
+.account-container > button {
+  margin-top: 4px;
+  background-color: rgba(185, 54, 54, 0.726);
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 4px;
+  width: fit-content;
+  cursor: pointer;
+  align-self: center;
+}
+
+.user-details-container {
+  color: white;
+  width: 30%;
+  height: fit-content;
+  align-self: center;
+  padding-top: 4px;
+  border-style: solid;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  min-height: 224px;
+}
+
+.user-details-container > p {
+  color: white;
+  margin: 6px;
+  font-size: 20px;
+  display: flex;
+  width: fit-content;
+  align-self: center;
+  cursor: pointer;
+}
+
+.user-details-container > form > input, button {
+  padding: 3px;
+  margin: 6.5px;
+  border-radius: 2px;
+  background-color:rgb(255, 255, 255);
+  margin-top: 10px;
+}
+
+.user-details-container > form > button {
+  opacity: 70%;
+  cursor: pointer;
+}
+
+.user-details-container > form > button:hover {
+  opacity: 100%;
+}
+
+.user-details-container > form > input {
+  width: 200px;
+  text-align: center;
+}
+
+.collection-card {
+  text-align: center;
+  padding: 10px;
+  margin: 30px;
+  margin-bottom: auto;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.507);
+  font-weight: bold;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 20px;
+  position: relative;
+  width: 300px;
+  height: 500px;
+}
+
+.collection-card > img {
+  border-radius: 10px;
+  opacity: 1;
+  display: flex;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.collection-card > p {
+  background-color: rgba(0, 0, 0, 0.63);
+  border-radius: 12px;
+}
+
+.collection-card > #name-container {
+  min-height: 70px;
+}
+
+.overflow-container, .records-in-collection {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333333;
+  width: fit-content;
+  height: 680px;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.305);
+}
+
+.overflow-container {
+  height: 728px;
+}
+
+/* .order-cards {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  border-bottom: solid;
+  font-size: 20px;
+  margin: 8px;
+  padding-bottom: 6px;
+  border-width: 6px;
+} */
+
+/* .order-cards > img {
+  width: 300px;
+  align-self: center;
+  border-radius: 10px;
+  border-style: solid;
+}
+
+.order-cards > p {
+  margin: 6px;
+  border-style: solid;
+  width: fit-content;
+  align-self: center;
+  padding: 2px;
+  background-color: #333333;
+  border-radius: 12px;
+  color: white;
+  border-color:#333333;
+  font-weight: bold;
+} */
+
+.collection-headers > h2, #order-btn {
+  color: rgba(255, 255, 255, 0.925);
+  width: fit-content;
+  background-color: rgba(0, 0, 0, 0.534);
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.collection-headers > h2 {
+  padding: 4px;
+  padding-bottom: 4px;
+  margin: 0;
+  font-size: 20px;
+  margin-left: 8px;
+}
+
+/* .order-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+} */
+
+.collection-headers {
+  display: flex;
+  align-items: center;
+  border-style: solid;
+  border-width: 2px;
+  background-color: rgba(185, 54, 54, 0.726);
+  border-color: rgb(0, 0, 0);
+  border-radius: 12px;
+}
+
+.record-collection-container > h1 {
+  border-bottom: solid;
+  color: white;
+}
+
+/* .order-container > h1 {
+  border-bottom: solid;
+  color: white;
+  width: fit-content;
+  align-self: center;
+} */
+

@@ -8,15 +8,15 @@ class ApplicationController < Sinatra::Base
 #     collection.to_json
 #   end
 
-#   get "/collector" do
-#     collector = Collector.all
-#     collector.to_json 
-#   end
+  get "/collectors" do
+    collector = Collector.all
+    collector.to_json 
+  end
 
-#   get "/records" do
-#     records = Record.all
-#     records.to_json
-#   end
+  get "/records" do
+    records = Record.all
+    records.to_json
+  end
 
 #   get "/records" do
 #       records = Record.all(param[:id])
